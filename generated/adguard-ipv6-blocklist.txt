@@ -1,1 +1,9 @@
-.
+! Title: Domain Guardrails - IPv6 (AAAA) Blocklist
+! Description: Generated from source/domains.txt. Blocks IPv6 AAAA answers only.
+! Syntax: AdGuard DNS filtering rules
+! Generated: 2026-02-20T17:44:26Z
+!
+! Rule format: ||example.com^$dnstype=AAAA,dnsrewrite=NOERROR
+!
+||facebook.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||reddit.com^$dnstype=AAAA,dnsrewrite=NOERROR
