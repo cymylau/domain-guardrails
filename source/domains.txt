@@ -7,6 +7,7 @@ chatgpt.com
 cirriustech.co.uk
 ddlvalley.me
 drunkenslug.com
+dualstack.reddit.map.fastly.net
 githubusercontent.com
 gitlab.com
 howsmyssl.com
@@ -26,4 +27,3 @@ servarr.com
 sonarr.tv
 thexem.info
 tmdb.org
-dualstack.reddit.map.fastly.net

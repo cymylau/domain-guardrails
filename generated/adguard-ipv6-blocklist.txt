@@ -1,6 +1,6 @@
 ! Title: Domain Guardrails - IPv6 (AAAA) Blocklist
 ! Description: Generated from source/domains.txt
-! Generated: 2026-02-20T17:53:39Z
+! Generated: 2026-02-20T18:07:20Z
 !
 ! Format: ||domain^$dnstype=AAAA,dnsrewrite=NOERROR
 !
@@ -9,6 +9,7 @@
 ||cirriustech.co.uk^$dnstype=AAAA,dnsrewrite=NOERROR
 ||ddlvalley.me^$dnstype=AAAA,dnsrewrite=NOERROR
 ||drunkenslug.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||dualstack.reddit.map.fastly.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||githubusercontent.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||gitlab.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||howsmyssl.com^$dnstype=AAAA,dnsrewrite=NOERROR
