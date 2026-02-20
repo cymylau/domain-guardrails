@@ -1,56 +1,41 @@
-name: Build AdGuard IPv6 Blocklist
+name: Build AdGuard IPv6 blocklist
 
 on:
   push:
-    branches: ["main"]
     paths:
-      - "source/domains.txt"
+      - "sources/**"
+      - "source/**"
       - "scripts/build_adguard_ipv6_blocklist.py"
-      - ".github/workflows/build-adguard-ipv6.yml"
-  pull_request:
-    paths:
-      - "source/domains.txt"
-      - "scripts/build_adguard_ipv6_blocklist.py"
-
-permissions:
-  contents: write
+      - ".github/workflows/build-adguard.yml"
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Generate blocklist
+      - name: Build lists
         run: |
           python3 scripts/build_adguard_ipv6_blocklist.py
 
-      - name: Show diff (if any)
+      - name: Commit changes (if any)
         run: |
-          git status --porcelain
-          git diff -- generated/adguard-ipv6-blocklist.txt || true
-
-      # Avoid infinite loops by only committing if generated file changed.
-      - name: Commit generated output
-        if: github.event_name == 'push'
-        run: |
-          if git diff --quiet -- generated/adguard-ipv6-blocklist.txt; then
-            echo "No changes to generated output; nothing to commit."
+          if git diff --quiet; then
+            echo "No changes."
             exit 0
           fi
-
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
           git add source/domains.txt generated/adguard-ipv6-blocklist.txt
-          git commit -m "chore: regenerate AdGuard IPv6 blocklists [skip ci]"
+          git commit -m "Update generated AdGuard IPv6 blocklist"
           git push
