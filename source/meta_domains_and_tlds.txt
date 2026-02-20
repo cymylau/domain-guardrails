@@ -1,0 +1,56 @@
+# Meta (Facebook/Instagram/WhatsApp/Threads) – commonly used base domains and observed TLDs
+# Generated: 2026-02-20 (Europe/London)
+#
+# Notes:
+# - Meta does not publish a single definitive, exhaustive list of every domain it owns/uses.
+# - This file is a best-effort, practical allow/deny reference list of commonly used base domains.
+# - Prefer treating these as 'include subdomains' (e.g., *.facebook.com) where relevant.
+
+## Observed top-level domains (TLDs) in this list
+.ai
+.am
+.com
+.me
+.net
+
+## Base domains (one per line)
+about.meta.com
+account.meta.com
+business.fb.com
+cdninstagram.com
+developers.facebook.com
+facebook.com
+facebook.net
+facebookmail.com
+fb.com
+fb.me
+fbcdn.net
+fbsbx.com
+g.whatsapp.net
+ig.me
+instagr.am
+instagram.com
+l.facebook.com
+m.facebook.com
+m.me
+mail.instagram.com
+messenger.com
+meta.ai
+meta.com
+metamail.com
+scontent.whatsapp.net
+static.whatsapp.net
+threads.com
+threads.net
+w.m.me
+wa.me
+web.whatsapp.com
+whatsapp.com
+whatsapp.net
+work.me
+workplace.com
+
+## Source hints (non-exhaustive)
+# Workplace domain whitelisting guidance lists: *.workplace.com, *.facebook.com, *.fbcdn.net, *.fb.me, *.work.me, *.fbsbx.com, *.w.m.me
+# See Workplace IT Configuration > Domain Whitelisting / Networking.
+# Community-maintained domain collections also include meta.com, instagram.com, threads.net, etc.
