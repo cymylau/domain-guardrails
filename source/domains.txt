@@ -26,3 +26,4 @@ servarr.com
 sonarr.tv
 thexem.info
 tmdb.org
+dualstack.reddit.map.fastly.net
