@@ -1,6 +1,22 @@
-# Domain Guardrails - Master Domain List
-# One domain per line.
-# This file is auto-sorted and normalised by CI.
-
-facebook.com
+bootswatch.com
+cirriustech.co.uk
+ddlvalley.me
+drunkenslug.com
+githubusercontent.com
+gitlab.com
+howsmyssl.com
+ipleak.net
+lscr.io
+moviebox.id
+radarr.video
+redd.it
 reddit.com
+redditmedia.com
+redditspace.com
+redditstatic.com
+ruthlessreviews.com
+sabnzbd.org
+servarr.com
+sonarr.tv
+thexem.info
+tmdb.org
