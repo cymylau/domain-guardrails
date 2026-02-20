@@ -1,30 +1,19 @@
 #!/usr/bin/env python3
 """
-Build an AdGuard Home filter list that blocks IPv6 (AAAA) DNS answers
-for a curated set of domains.
+Build an AdGuard Home IPv6 (AAAA) blocklist from a master domain list.
 
-Input:
-  - source/domains.txt  (one domain per line, optional comments with #)
-
-Output:
-  - generated/adguard-ipv6-blocklist.txt
+This script:
+  1. Normalises and validates source/domains.txt
+  2. Sorts and de-duplicates it
+  3. Rewrites source/domains.txt in canonical sorted form
+  4. Generates generated/adguard-ipv6-blocklist.txt
 
 Rule format:
   ||example.com^$dnstype=AAAA,dnsrewrite=NOERROR
-
-Meaning:
-  - Match the domain and its subdomains (||example.com^)
-  - Only apply to AAAA queries (IPv6) ($dnstype=AAAA)
-  - Respond with an empty NOERROR (dnsrewrite=NOERROR)
-
-Notes:
-  - $dnstype is supported by AdGuard DNS filtering syntax used in AdGuard Home.  [oai_citation:1‡AdGuard DNS — ad-blocking DNS server](https://adguard-dns.com/kb/general/dns-filtering-syntax/?utm_source=chatgpt.com)
-  - Returning empty NOERROR for rewrites is referenced in AdGuard Home discussions/changes.  [oai_citation:2‡GitHub](https://github.com/AdguardTeam/AdGuardHome/discussions/4021?utm_source=chatgpt.com)
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 import re
@@ -41,67 +30,52 @@ DOMAIN_PATTERN = re.compile(
 )
 
 
-@dataclass(frozen=True)
-class BuildResult:
-    domains_in: int
-    domains_out: int
-    warnings: list[str]
-
-
 def normalise_domain(line: str) -> str | None:
-    """
-    Convert an input line into a clean domain name or None if it should be skipped.
-    """
-    # Strip whitespace
     cleaned = line.strip()
 
-    # Ignore blank lines
-    if not cleaned:
+    if not cleaned or cleaned.startswith("#"):
         return None
 
-    # Ignore full-line comments
-    if cleaned.startswith("#"):
-        return None
-
-    # Remove inline comments: "example.com  # comment"
     if "#" in cleaned:
         cleaned = cleaned.split("#", 1)[0].strip()
 
-    # Lowercase domains; DNS is case-insensitive
     cleaned = cleaned.lower()
-
-    # If someone pasted a scheme or wildcard, we try to gently correct.
     cleaned = cleaned.removeprefix("https://").removeprefix("http://")
-    cleaned = cleaned.lstrip("*.")  # "*.example.com" -> "example.com"
-
-    # Remove trailing dot
+    cleaned = cleaned.lstrip("*.")  # remove wildcard prefix
     cleaned = cleaned.rstrip(".")
 
     return cleaned or None
 
 
 def validate_domain(domain: str) -> bool:
-    """
-    Conservative domain validator (keeps obvious junk out of your output).
-    You can relax this if you deliberately want exotic TLDs/punycode patterns.
-    """
-    # Allow punycode labels (xn--)
-    if "xn--" in domain:
+    if "xn--" in domain:  # allow punycode
         return True
 
     return DOMAIN_PATTERN.match(domain) is not None
 
 
 def build_rules(domains: list[str]) -> list[str]:
+    return [
+        f"||{domain}^$dnstype=AAAA,dnsrewrite=NOERROR"
+        for domain in domains
+    ]
+
+
+def rewrite_source_file(domains: list[str]) -> None:
     """
-    Build AdGuard filter rules that block AAAA queries for each domain.
+    Overwrite source/domains.txt in clean, sorted canonical form.
     """
-    rules: list[str] = []
-    for domain in domains:
-        # ||example.com^ matches example.com and subdomains in AdGuard rule syntax
-        # $dnstype=AAAA targets IPv6 queries; dnsrewrite=NOERROR returns empty success.
-        rules.append(f"||{domain}^$dnstype=AAAA,dnsrewrite=NOERROR")
-    return rules
+    header = [
+        "# Domain Guardrails - Master Domain List",
+        "# One domain per line.",
+        "# This file is auto-sorted and normalised by CI.",
+        "",
+    ]
+
+    SOURCE_FILE.write_text(
+        "\n".join(header + domains) + "\n",
+        encoding="utf-8",
+    )
 
 
 def main() -> int:
@@ -111,8 +85,8 @@ def main() -> int:
 
     raw_lines = SOURCE_FILE.read_text(encoding="utf-8").splitlines()
 
-    warnings: list[str] = []
     cleaned_domains: list[str] = []
+    warnings: list[str] = []
 
     for idx, line in enumerate(raw_lines, start=1):
         domain = normalise_domain(line)
@@ -120,45 +94,42 @@ def main() -> int:
             continue
 
         if not validate_domain(domain):
-            warnings.append(f"Line {idx}: Skipping invalid-looking domain: {domain!r}")
+            warnings.append(f"Line {idx}: Invalid domain skipped: {domain!r}")
             continue
 
         cleaned_domains.append(domain)
 
-    # De-duplicate while preserving sort order (stable)
-    deduped_domains = list(dict.fromkeys(cleaned_domains))
+    # De-duplicate and sort deterministically
+    deduped_domains = sorted(set(cleaned_domains))
 
-    # Sort for deterministic output (makes diffs clean)
-    deduped_domains.sort()
+    # Rewrite canonical source file
+    rewrite_source_file(deduped_domains)
 
+    # Generate AdGuard rules in same order
     rules = build_rules(deduped_domains)
 
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     header = [
         "! Title: Domain Guardrails - IPv6 (AAAA) Blocklist",
-        "! Description: Generated from source/domains.txt. Blocks IPv6 AAAA answers only.",
-        "! Syntax: AdGuard DNS filtering rules",
+        "! Description: Generated from source/domains.txt",
         f"! Generated: {generated_at}",
         "!",
-        "! Rule format: ||example.com^$dnstype=AAAA,dnsrewrite=NOERROR",
+        "! Format: ||domain^$dnstype=AAAA,dnsrewrite=NOERROR",
         "!",
     ]
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_FILE.write_text("\n".join(header + rules) + "\n", encoding="utf-8")
-
-    result = BuildResult(
-        domains_in=len(cleaned_domains),
-        domains_out=len(deduped_domains),
-        warnings=warnings,
+    OUTPUT_FILE.write_text(
+        "\n".join(header + rules) + "\n",
+        encoding="utf-8",
     )
 
-    print(f"Wrote {OUTPUT_FILE} with {result.domains_out} domains (from {result.domains_in} input lines).")
-    if result.warnings:
+    print(f"Processed {len(deduped_domains)} domains.")
+    if warnings:
         print("\nWarnings:")
-        for w in result.warnings:
-            print(f" - {w}")
+        for w in warnings:
+            print(" -", w)
 
     return 0
 
