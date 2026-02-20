@@ -1,2 +1,6 @@
-reddit.com
+# Domain Guardrails - Master Domain List
+# One domain per line.
+# This file is auto-sorted and normalised by CI.
+
 facebook.com
+reddit.com
