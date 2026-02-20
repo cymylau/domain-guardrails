@@ -1,10 +1,11 @@
 ! Title: Domain Guardrails - IPv6 (AAAA) Blocklist
 ! Description: Generated from source/domains.txt
-! Generated: 2026-02-20T17:50:18Z
+! Generated: 2026-02-20T17:53:39Z
 !
 ! Format: ||domain^$dnstype=AAAA,dnsrewrite=NOERROR
 !
 ||bootswatch.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||chatgpt.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||cirriustech.co.uk^$dnstype=AAAA,dnsrewrite=NOERROR
 ||ddlvalley.me^$dnstype=AAAA,dnsrewrite=NOERROR
 ||drunkenslug.com^$dnstype=AAAA,dnsrewrite=NOERROR
@@ -14,6 +15,7 @@
 ||ipleak.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||lscr.io^$dnstype=AAAA,dnsrewrite=NOERROR
 ||moviebox.id^$dnstype=AAAA,dnsrewrite=NOERROR
+||openai.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||radarr.video^$dnstype=AAAA,dnsrewrite=NOERROR
 ||redd.it^$dnstype=AAAA,dnsrewrite=NOERROR
 ||reddit.com^$dnstype=AAAA,dnsrewrite=NOERROR

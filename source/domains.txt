@@ -3,6 +3,7 @@
 # This file is auto-sorted and normalised by CI.
 
 bootswatch.com
+chatgpt.com
 cirriustech.co.uk
 ddlvalley.me
 drunkenslug.com
@@ -12,6 +13,7 @@ howsmyssl.com
 ipleak.net
 lscr.io
 moviebox.id
+openai.com
 radarr.video
 redd.it
 reddit.com
@@ -24,5 +26,3 @@ servarr.com
 sonarr.tv
 thexem.info
 tmdb.org
-openai.com
-chatgpt.com
