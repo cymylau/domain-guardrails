@@ -24,3 +24,5 @@ servarr.com
 sonarr.tv
 thexem.info
 tmdb.org
+openai.com
+chatgpt.com
