@@ -1,11 +1,11 @@
 ! Title: Domain Guardrails - IPv6 (AAAA) Suppression List
 ! Description: Generated from ./source/*.txt (combined, deduped, sorted)
-! Generated: 2026-02-20T21:19:30Z
+! Generated: 2026-02-20T21:22:20Z
 !
 ! Inputs:
 !   - source/domains.txt
+!   - source/kagi_domains.txt
 !   - source/meta_domains_and_tlds.txt
-!   - source/privacy.txt
 !
 ! Format: ||domain^$dnstype=AAAA,dnsrewrite=NOERROR
 !
@@ -36,6 +36,7 @@
 ||instagram.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||ipleak.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||kagi.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||kagifeedback.org^$dnstype=AAAA,dnsrewrite=NOERROR
 ||l.facebook.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||lscr.io^$dnstype=AAAA,dnsrewrite=NOERROR
 ||m.facebook.com^$dnstype=AAAA,dnsrewrite=NOERROR
