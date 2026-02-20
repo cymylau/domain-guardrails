@@ -1,3 +1,7 @@
+# Domain Guardrails - Master Domain List
+# One domain per line.
+# This file is auto-sorted and normalised by CI.
+
 bootswatch.com
 cirriustech.co.uk
 ddlvalley.me
