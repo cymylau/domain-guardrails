@@ -1,23 +1,48 @@
-! Title: Domain Guardrails - IPv6 (AAAA) Blocklist
-! Description: Generated from sources/**/*.txt (or fallback source/domains.txt)
-! Generated: 2026-02-20T19:00:58Z
+! Title: Domain Guardrails - IPv6 (AAAA) Suppression List
+! Description: Generated from ./source/*.txt (combined, deduped, sorted)
+! Generated: 2026-02-20T19:45:31Z
 !
 ! Inputs:
 !   - source/domains.txt
+!   - source/meta_domains_and_tlds.txt
 !
 ! Format: ||domain^$dnstype=AAAA,dnsrewrite=NOERROR
 !
+||about.meta.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||account.meta.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||bootswatch.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||business.fb.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||cdninstagram.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||chatgpt.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||cirriustech.co.uk^$dnstype=AAAA,dnsrewrite=NOERROR
 ||ddlvalley.me^$dnstype=AAAA,dnsrewrite=NOERROR
+||developers.facebook.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||drunkenslug.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||dualstack.reddit.map.fastly.net^$dnstype=AAAA,dnsrewrite=NOERROR
+||facebook.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||facebook.net^$dnstype=AAAA,dnsrewrite=NOERROR
+||facebookmail.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||fb.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||fb.me^$dnstype=AAAA,dnsrewrite=NOERROR
+||fbcdn.net^$dnstype=AAAA,dnsrewrite=NOERROR
+||fbsbx.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||g.whatsapp.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||githubusercontent.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||gitlab.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||howsmyssl.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||ig.me^$dnstype=AAAA,dnsrewrite=NOERROR
+||instagr.am^$dnstype=AAAA,dnsrewrite=NOERROR
+||instagram.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||ipleak.net^$dnstype=AAAA,dnsrewrite=NOERROR
+||l.facebook.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||lscr.io^$dnstype=AAAA,dnsrewrite=NOERROR
+||m.facebook.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||m.me^$dnstype=AAAA,dnsrewrite=NOERROR
+||mail.instagram.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||messenger.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||meta.ai^$dnstype=AAAA,dnsrewrite=NOERROR
+||meta.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||metamail.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||moviebox.id^$dnstype=AAAA,dnsrewrite=NOERROR
 ||openai.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||radarr.video^$dnstype=AAAA,dnsrewrite=NOERROR
@@ -28,7 +53,18 @@
 ||redditstatic.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||ruthlessreviews.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||sabnzbd.org^$dnstype=AAAA,dnsrewrite=NOERROR
+||scontent.whatsapp.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||servarr.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||sonarr.tv^$dnstype=AAAA,dnsrewrite=NOERROR
+||static.whatsapp.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||thexem.info^$dnstype=AAAA,dnsrewrite=NOERROR
+||threads.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||threads.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||tmdb.org^$dnstype=AAAA,dnsrewrite=NOERROR
+||w.m.me^$dnstype=AAAA,dnsrewrite=NOERROR
+||wa.me^$dnstype=AAAA,dnsrewrite=NOERROR
+||web.whatsapp.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||whatsapp.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||whatsapp.net^$dnstype=AAAA,dnsrewrite=NOERROR
+||work.me^$dnstype=AAAA,dnsrewrite=NOERROR
+||workplace.com^$dnstype=AAAA,dnsrewrite=NOERROR
