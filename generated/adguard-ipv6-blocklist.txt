@@ -1,6 +1,9 @@
 ! Title: Domain Guardrails - IPv6 (AAAA) Blocklist
-! Description: Generated from source/domains.txt
-! Generated: 2026-02-20T18:07:20Z
+! Description: Generated from sources/**/*.txt (or fallback source/domains.txt)
+! Generated: 2026-02-20T19:00:07Z
+!
+! Inputs:
+!   - source/domains.txt
 !
 ! Format: ||domain^$dnstype=AAAA,dnsrewrite=NOERROR
 !

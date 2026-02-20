@@ -1,6 +1,8 @@
 # Domain Guardrails - Master Domain List
 # One domain per line.
 # This file is auto-sorted and normalised by CI.
+#
+# Preferred source of truth is sources/**/*.txt (this file is generated from them).
 
 bootswatch.com
 chatgpt.com
