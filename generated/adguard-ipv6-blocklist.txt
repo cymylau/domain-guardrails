@@ -1,6 +1,6 @@
 ! Title: Domain Guardrails - IPv6 (AAAA) Suppression List
 ! Description: Generated from ./source/*.txt (combined, deduped, sorted)
-! Generated: 2026-02-26T08:23:57Z
+! Generated: 2026-02-26T08:24:25Z
 !
 ! Inputs:
 !   - source/domains.txt
