@@ -1,6 +1,6 @@
 ! Title: Domain Guardrails - IPv6 (AAAA) Suppression List
 ! Description: Generated from ./source/*.txt (combined, deduped, sorted)
-! Generated: 2026-02-26T08:24:25Z
+! Generated: 2026-02-26T08:29:45Z
 !
 ! Inputs:
 !   - source/domains.txt
@@ -12,6 +12,7 @@
 !
 ||about.meta.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||account.meta.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||atc.spotify.map.fastly.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||bootswatch.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||business.fb.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||byspotify.com^$dnstype=AAAA,dnsrewrite=NOERROR
