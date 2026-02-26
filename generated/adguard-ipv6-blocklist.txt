@@ -1,11 +1,12 @@
 ! Title: Domain Guardrails - IPv6 (AAAA) Suppression List
 ! Description: Generated from ./source/*.txt (combined, deduped, sorted)
-! Generated: 2026-02-20T21:22:20Z
+! Generated: 2026-02-26T08:23:57Z
 !
 ! Inputs:
 !   - source/domains.txt
 !   - source/kagi_domains.txt
 !   - source/meta_domains_and_tlds.txt
+!   - source/spotify.txt
 !
 ! Format: ||domain^$dnstype=AAAA,dnsrewrite=NOERROR
 !
@@ -13,6 +14,7 @@
 ||account.meta.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||bootswatch.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||business.fb.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||byspotify.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||cdninstagram.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||chatgpt.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||cirriustech.co.uk^$dnstype=AAAA,dnsrewrite=NOERROR
@@ -48,6 +50,7 @@
 ||metamail.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||moviebox.id^$dnstype=AAAA,dnsrewrite=NOERROR
 ||openai.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||pscdn.co^$dnstype=AAAA,dnsrewrite=NOERROR
 ||radarr.video^$dnstype=AAAA,dnsrewrite=NOERROR
 ||redd.it^$dnstype=AAAA,dnsrewrite=NOERROR
 ||reddit.com^$dnstype=AAAA,dnsrewrite=NOERROR
@@ -56,14 +59,53 @@
 ||redditstatic.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||ruthlessreviews.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||sabnzbd.org^$dnstype=AAAA,dnsrewrite=NOERROR
+||scdn.co^$dnstype=AAAA,dnsrewrite=NOERROR
 ||scontent.whatsapp.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||servarr.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||sonarr.tv^$dnstype=AAAA,dnsrewrite=NOERROR
+||spoti.fi^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify-everywhere.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.ac^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.app^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.business^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.ca^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.co.jp^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.co.uk^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.com.au^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.com.br^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.community^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.de^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.design^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.dev^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.es^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.events^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.fm^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.fr^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.help^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.in^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.it^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.li^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.link^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.media^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.mx^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.news^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.shop^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.store^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.support^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotify.tools^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotifycdn.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotifycdn.net^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotifycharts.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotifycodes.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotifyforartists.com^$dnstype=AAAA,dnsrewrite=NOERROR
+||spotifypodcast.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||static.whatsapp.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||thexem.info^$dnstype=AAAA,dnsrewrite=NOERROR
 ||threads.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||threads.net^$dnstype=AAAA,dnsrewrite=NOERROR
 ||tmdb.org^$dnstype=AAAA,dnsrewrite=NOERROR
+||topotify.com^$dnstype=AAAA,dnsrewrite=NOERROR
 ||w.m.me^$dnstype=AAAA,dnsrewrite=NOERROR
 ||wa.me^$dnstype=AAAA,dnsrewrite=NOERROR
 ||web.whatsapp.com^$dnstype=AAAA,dnsrewrite=NOERROR
