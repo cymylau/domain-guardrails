@@ -1,3 +1,4 @@
+atc.spotify.map.fastly.net
 spotify.com
 spotify.co.uk
 spotify.com.br
